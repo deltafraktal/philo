@@ -10,11 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/philo.h"
+#include "../philo.h"
+
+int	parse(int ac, char av, t_table *table)
+{
+	if (ac != 5 || ac != 6)
+		return (0);
+
+}
 
 int	main(int ac, char **av)
 {
     (void) ac;
 	(void) **av;
+	if (!parse)
+
 	return (0);
 }
