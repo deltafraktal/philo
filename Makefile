@@ -5,7 +5,7 @@
 NAME        =  philo
 NAME_B      =  philo_bonus
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror
+CFLAGS      = -Wall -Wextra -Werror -pthread
 RM          = rm -f
 SRC_DIR     = src
 SRC_B_DIR   = src/bonus
@@ -22,8 +22,7 @@ YELLOW      := \033[33m
 
 # ──────────────────────────────────────────────────────────────────────────────
 
-SRCS        = \
-    $(SRC_DIR)/main.c \
+SRCS        = $(wildcard $(SRC_DIR)/*.c)
 
 SRCS_B		= \
 
