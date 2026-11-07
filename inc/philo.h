@@ -6,7 +6,7 @@
 /*   By: goblin <goblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 04:08:26 by dgeara            #+#    #+#             */
-/*   Updated: 2026/10/25 03:37:56 by goblin           ###   ########.fr       */
+/*   Updated: 2026/11/06 23:02:30 by goblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ struct s_table
 	int			must_eat;
 	long		start_time;
 	int			stop;
-	t_mtx		*forks;
+	t_mtx		*forks; //uitlisé ?
 	t_mtx		print_mtx;
 	t_mtx		data_mtx;
 	t_philo		*philos;
@@ -66,8 +66,26 @@ int		main(int ac, char **av);
 int		valid_num(char *s, long *ret);
 int		parse(int ac, char **av, t_table *table);
 
-//init.c
-int	set_table(t_table *table);
+// init.c
+void	destroy_mtx(t_table *table, int count);
+int		init_mutexes(t_table *table);
+void	init_philos(t_table *table);
+int		set_table(t_table *table);
+
+// time.c
+long	get_time(void);
+void	ft_usleep(t_table *table, long ms);
+int		simulation_over(t_table *table);
+void	print_status(t_philo *philo, char *msg);
+
+// simulation.c
+void	mister_lonely(t_philo *philo);
+void	eat(t_philo *philo);
+void	*simulation(void *arg);
+
+// monitor.c
+void	monitor(t_table *table);
+
 //utils.c
 void	ft_putstr_fd(char *s, int fd);
 

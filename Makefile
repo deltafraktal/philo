@@ -5,7 +5,7 @@
 NAME        =  philo
 NAME_B      =  philo_bonus
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror -pthread
+CFLAGS      = -Wall -Wextra -Werror -pthread -g
 RM          = rm -f
 SRC_DIR     = src
 SRC_B_DIR   = src/bonus
