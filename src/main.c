@@ -6,26 +6,11 @@
 /*   By: goblin <goblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 04:08:17 by dgeara            #+#    #+#             */
-/*   Updated: 2026/11/06 23:01:31 by goblin           ###   ########.fr       */
+/*   Updated: 2026/11/07 22:23:48 by goblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/philo.h"
-
-/* void	debug_forks(t_table *table)
-{
-	int	i;
-
-	i = 0;
-	while (i < table->nb_philo)
-	{
-		printf("philo %d : first = forks[%ld], second = forks[%ld]\n",
-			table->philos[i].id,
-			table->philos[i].first_fork - table->forks,
-			table->philos[i].second_fork - table->forks);
-		i++;
-	}
-} */
 
 void	cleanup(t_table *table) //revoir 
 {
@@ -51,7 +36,7 @@ int	start_simulation(t_table *table)
 {
 	int		i;
 	t_philo	*philos;
-	
+
 	i = 0;
 	philos = table->philos;
 	table->start_time = get_time();
@@ -73,9 +58,8 @@ int	start_simulation(t_table *table)
 	return (1);
 }
 
-
 int	main(int ac, char **av)
-{	
+{
 	t_table	table;
 
 	if (!parse(ac, av, &table))

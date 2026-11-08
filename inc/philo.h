@@ -6,7 +6,7 @@
 /*   By: goblin <goblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 04:08:26 by dgeara            #+#    #+#             */
-/*   Updated: 2026/11/06 23:02:30 by goblin           ###   ########.fr       */
+/*   Updated: 2026/11/07 22:26:42 by goblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 # include <sys/time.h>
 # include <pthread.h>
 # include <string.h>
-
-# include <limits.h> // c ok ?
+# include <limits.h>
 
 # define BOLD "\033[1m"
 # define PURPLE "\033[35m"
@@ -28,7 +27,6 @@
 # define END "\033[0m"
 
 // structs
-
 typedef pthread_mutex_t	t_mtx;
 typedef struct s_table	t_table;
 
@@ -53,7 +51,7 @@ struct s_table
 	int			must_eat;
 	long		start_time;
 	int			stop;
-	t_mtx		*forks; //uitlisé ?
+	t_mtx		*forks;
 	t_mtx		print_mtx;
 	t_mtx		data_mtx;
 	t_philo		*philos;
