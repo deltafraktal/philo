@@ -146,6 +146,12 @@ Test de charge avec beaucoup de threads :
 ./philo 200 800 200 200 2
 ```
 
+Make pour valgrind :
+```bash
+make re CFLAGS="-Wall -Wextra -Werror -pthread -g -fsanitize=thread"
+```
+
+
 ---
 
 ## Ressources

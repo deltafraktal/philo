@@ -6,7 +6,7 @@
 /*   By: goblin <goblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 02:25:58 by goblin            #+#    #+#             */
-/*   Updated: 2026/11/08 07:21:48 by goblin           ###   ########.fr       */
+/*   Updated: 2026/11/08 15:28:25 by goblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	mister_lonely(t_philo *philo)
 void	think(t_philo *philo)
 {
 	long	think_time;
+	long	time_left;
 	t_table	*table;
 
 	table = philo->table;
@@ -31,6 +32,12 @@ void	think(t_philo *philo)
 		think_time = table->time_to_eat - table->time_to_sleep;
 	else
 		think_time = 2 * table->time_to_eat - table->time_to_sleep;
+	pthread_mutex_lock(&philo->meals_mtx);
+	time_left = table->time_to_die - (get_time() - philo->last_meal);
+	pthread_mutex_unlock(&philo->meals_mtx);
+	time_left = (time_left - table->time_to_eat) / 2;
+	if (think_time > time_left)
+		think_time = time_left;
 	if (think_time > 0)
 		ft_usleep(table, think_time);
 }
