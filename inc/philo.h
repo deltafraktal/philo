@@ -6,7 +6,7 @@
 /*   By: goblin <goblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 04:08:26 by dgeara            #+#    #+#             */
-/*   Updated: 2026/11/08 07:09:53 by goblin           ###   ########.fr       */
+/*   Updated: 2026/11/08 19:02:05 by goblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,8 @@ int		init_mutexes(t_table *table);
 void	init_philos(t_table *table);
 int		set_table(t_table *table);
 
-// time.c
-long	get_time(void);
-void	ft_usleep(t_table *table, long ms);
-int		simulation_over(t_table *table);
-void	print_status(t_philo *philo, char *msg);
-
 // simulation.c
+int		simulation_over(t_table *table);
 void	mister_lonely(t_philo *philo);
 void	think(t_philo *philo);
 void	eat(t_philo *philo);
@@ -82,5 +77,8 @@ void	monitor(t_table *table);
 
 // utils.c
 void	ft_putstr_fd(char *s, int fd);
+long	get_time(void);
+void	ft_usleep(t_table *table, long ms);
+void	print_status(t_philo *philo, char *msg);
 
 #endif

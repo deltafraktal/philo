@@ -6,11 +6,21 @@
 /*   By: goblin <goblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 02:25:58 by goblin            #+#    #+#             */
-/*   Updated: 2026/11/08 15:28:25 by goblin           ###   ########.fr       */
+/*   Updated: 2026/11/08 19:01:30 by goblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/philo.h"
+
+int	simulation_over(t_table *table)
+{
+	int	is_over;
+
+	pthread_mutex_lock(&table->data_mtx);
+	is_over = table->stop;
+	pthread_mutex_unlock(&table->data_mtx);
+	return (is_over);
+}
 
 void	mister_lonely(t_philo *philo)
 {
