@@ -6,11 +6,10 @@
 /*   By: goblin <goblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 02:54:26 by goblin            #+#    #+#             */
-/*   Updated: 2026/11/07 22:10:37 by goblin           ###   ########.fr       */
+/*   Updated: 2026/11/08 07:06:27 by goblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// void end_simulation
 #include "../inc/philo.h"
 
 int	dead_philo(t_philo *philo)
@@ -70,5 +69,6 @@ void	monitor(t_table *table)
 		}
 		if (all_finished_eating(table, table->philos))
 			return ;
+		usleep(500);
 	}
 }

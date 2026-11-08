@@ -6,7 +6,7 @@
 /*   By: goblin <goblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 02:25:58 by goblin            #+#    #+#             */
-/*   Updated: 2026/11/07 22:21:25 by goblin           ###   ########.fr       */
+/*   Updated: 2026/11/08 07:21:48 by goblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,11 @@ void	*simulation(void *arg)
 	philo = (t_philo *)arg;
 	if (philo->table->nb_philo == 1)
 		return (mister_lonely(philo), NULL);
-	if (philo-> id % 2 == 0)
-		think(philo);
+	if (philo->id % 2 == 0)
+	{
+		print_status(philo, "is thinking");
+		ft_usleep(philo->table, philo->table->time_to_eat / 2);
+	}
 	while (!simulation_over(philo->table))
 	{
 		eat(philo);

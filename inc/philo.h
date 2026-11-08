@@ -6,7 +6,7 @@
 /*   By: goblin <goblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 04:08:26 by dgeara            #+#    #+#             */
-/*   Updated: 2026/11/07 22:26:42 by goblin           ###   ########.fr       */
+/*   Updated: 2026/11/08 07:09:53 by goblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@
 # include <pthread.h>
 # include <string.h>
 # include <limits.h>
-
-# define BOLD "\033[1m"
-# define PURPLE "\033[35m"
-# define YELLOW "\033[33m"
-# define END "\033[0m"
 
 // structs
 typedef pthread_mutex_t	t_mtx;
@@ -78,13 +73,14 @@ void	print_status(t_philo *philo, char *msg);
 
 // simulation.c
 void	mister_lonely(t_philo *philo);
+void	think(t_philo *philo);
 void	eat(t_philo *philo);
 void	*simulation(void *arg);
 
 // monitor.c
 void	monitor(t_table *table);
 
-//utils.c
+// utils.c
 void	ft_putstr_fd(char *s, int fd);
 
 #endif

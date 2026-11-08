@@ -6,13 +6,13 @@
 /*   By: goblin <goblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 04:08:17 by dgeara            #+#    #+#             */
-/*   Updated: 2026/11/07 22:23:48 by goblin           ###   ########.fr       */
+/*   Updated: 2026/11/08 07:08:14 by goblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/philo.h"
 
-void	cleanup(t_table *table) //revoir 
+void	cleanup(t_table *table)
 {
 	destroy_mtx(table, table->nb_philo);
 	pthread_mutex_destroy(&table->print_mtx);
@@ -70,7 +70,7 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	if (!set_table(&table))
-		return (1);
+		return (ft_putstr_fd("Error: init failed\n", 2), 1);
 	if (!start_simulation(&table))
 	{
 		cleanup(&table);
